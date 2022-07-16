@@ -1,0 +1,16 @@
+version: '3'
+services:
+  nodered:
+    build: ./nodered
+    image: localbuild/nodered:latest
+    container_name: nodered
+    restart: always
+    ports:
+      - 1880:1880
+    volumes:
+      - noderedData:/data
+    networks:
+      - iiot_network
+  mqtt:
+  influxdb:
+  grafana:
